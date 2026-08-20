@@ -12,6 +12,7 @@ tools/
 START-HERE.md
 PUBLISH.md
 UPLOAD-TO-GITHUB.md
+DNS-SETUP.md
 
 # Editor and operating-system clutter
 .DS_Store
