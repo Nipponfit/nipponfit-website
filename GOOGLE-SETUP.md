@@ -109,15 +109,93 @@ history carries over, which is genuinely helpful — you are not starting from z
 **business.google.com** — not Search Console. Different product, different login area,
 same Google account.
 
-## To add another location
+## Adding the second and third dojo, step by step
 
-1. Go to **business.google.com**
-2. Click the **business name** dropdown at the top, or **Businesses** in the side menu
-3. Click **Add business** → **Add single business**
-4. Enter the name, category (**Karate school**), and the address of the second dojo
-5. Choose a verification method — usually a postcard to that address, a phone call, or a
-   short video showing the premises
-6. Repeat for the third
+Sign in at **business.google.com** with the same Google account that owns your existing
+profile. Do the whole of this once for Dravid CSE, then again for Koramangala.
+
+### Step 1 — Start the new listing
+
+1. At the top left, click the **business name dropdown**, or **Businesses** in the side
+   menu. You should see your existing profile listed.
+2. Click **Add business** → **Add single business**
+
+### Step 2 — Name it
+
+Type **`Nippon Karate Club`** — exactly the same as your existing profile.
+
+**Do not write "Nippon Karate Club Koramangala".** Google's rules say the name must be
+the real business name, with no added location words, and listings that add them get
+flagged. The address is what tells the two apart, not the name. All three should read
+identically.
+
+### Step 3 — Category
+
+Primary category: **Karate school**
+
+You can add secondary categories afterwards — *Martial arts school*, *Self-defense
+school*, *Fitness centre* are all reasonable. Keep **Karate school** as the primary one
+on all three.
+
+### Step 4 — Address
+
+Say **yes** when it asks whether customers can visit, and enter that dojo's address:
+
+- **Dravid Centre for Sports Excellence**, Bengaluru, Karnataka
+- **Koramangala Club**, Koramangala, Bengaluru, Karnataka
+
+Drag the map pin to the exact building if Google places it loosely.
+
+### Step 5 — Service areas
+
+Add the neighbourhoods each dojo genuinely serves. For Koramangala: Koramangala, HSR
+Layout, Indiranagar. For Dravid CSE: the areas around it. Do not list the whole of
+Bengaluru — over-broad areas weaken a listing rather than help it.
+
+### Step 6 — Contact details
+
+| Field | What to enter |
+|---|---|
+| Phone | `+91 99456 16005` |
+| Website | `https://www.nipponfit.com/locations` |
+
+Point the second and third listings at the **Locations** page rather than the home page.
+It is the page that actually names all three dojos, so it is the most relevant one to
+land on.
+
+### Step 7 — Verify
+
+Google will offer one or more of:
+
+- **Video verification** — the most common now. You record a short continuous video
+  showing the building outside, any signage, the inside of the dojo, and something
+  proving you run it (keys, equipment, a class in progress). Follow the prompts exactly
+  and do not stop recording partway.
+- **Postcard** — a code posted to that address, arriving in 1–2 weeks.
+- **Phone or email** — occasionally offered.
+
+**Video is where a shared venue gets difficult.** If you cannot show your own signage
+and the dojo in use, the verification will likely be refused. That is the practical test
+of whether the location qualifies — see the section below.
+
+### Step 8 — Fill it in completely, then repeat
+
+Once verified, add hours, photographs and a description before moving to the next one. A
+half-filled listing performs badly.
+
+---
+
+## After all three are live
+
+**Link them together.** In each profile, the address and phone must be written
+**character for character identically** to the website. `+91 99456 16005` everywhere —
+not `9945616005` on one and `+91-9945616005` on another. Google cross-checks these and
+small differences weaken all three listings.
+
+**Worth doing:** ask me to build a separate page for each dojo — `/dojo-panathur`,
+`/dojo-koramangala`, `/dojo-dravid-cse`. Each Business Profile could then point at its
+own page instead of all three sharing `/locations`. That is a genuine improvement for
+local search, and about twenty minutes of work.
 
 ## Before you do — read this
 
