@@ -1,0 +1,7 @@
+# Nothing here needs building or installing, so there is very little to ignore.
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
+*.pyc
+.vercel

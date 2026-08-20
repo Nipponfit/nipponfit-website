@@ -1,0 +1,9 @@
+# Nippon Fit — nipponfit.com
+# Everything is open to search engines except the portal login page,
+# which has nothing useful in it for a searcher.
+
+User-agent: *
+Allow: /
+Disallow: /login
+
+Sitemap: https://www.nipponfit.com/sitemap.xml
