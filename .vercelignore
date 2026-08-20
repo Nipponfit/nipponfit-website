@@ -11,6 +11,7 @@ tools/
 # The instruction guides — for you, not for visitors.
 START-HERE.md
 PUBLISH.md
+UPLOAD-TO-GITHUB.md
 
 # Editor and operating-system clutter
 .DS_Store
