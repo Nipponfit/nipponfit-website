@@ -45,14 +45,32 @@ them by guesswork. Yours is live and lists **15 pages**.
 
 1. Select **`nipponfit.com`** in the property dropdown
 2. In the left menu, under **Indexing**, click **Sitemaps**
-3. In the "Add a new sitemap" box, type exactly:
+3. In the "Add a new sitemap" box, type the **whole address**:
 
    ```
-   sitemap.xml
+   https://www.nipponfit.com/sitemap.xml
    ```
 
-   Just that. The `https://nipponfit.com/` part is already filled in for you.
 4. Click **Submit**
+
+### Why the whole address, and not just `sitemap.xml`
+
+There are two kinds of Search Console property, and they behave differently here:
+
+| Property type | What to type |
+|---|---|
+| **Domain** — `nipponfit.com` — what you have | The **complete address**: `https://www.nipponfit.com/sitemap.xml` |
+| **URL prefix** — `https://nipponfit.com/` | Just `sitemap.xml`, because the front part is already shown beside the box |
+
+A Domain property covers `nipponfit.com`, `www.nipponfit.com` and `app.nipponfit.com`
+all at once, so Google has no way to guess which one you mean. It needs to be told in
+full. Typing only `sitemap.xml` gives **"Invalid sitemap address"**.
+
+### Use the `www` version
+
+Type `www.nipponfit.com`, not `nipponfit.com`. Both work — `nipponfit.com/sitemap.xml`
+forwards to the www one — but giving Google the address that answers directly avoids a
+needless redirect. I have checked it: it returns the file, correctly labelled as XML.
 
 **What success looks like:** a row appears saying **Success**, with "15 discovered
 pages". It may briefly say "Couldn't fetch" — wait a few hours and refresh before
