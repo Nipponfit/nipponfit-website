@@ -6,6 +6,11 @@
 
 from build import (page, crumbs, breadcrumb_ld, cta_band, ROOT,
                    PHONE_DISPLAY, PHONE_LINK, WHATSAPP, EMAIL)
+from dojos import DOJO, DOJOS, branch_card, department_ld, directions_url, postal_ld, geo_ld
+
+AA = DOJO["panathur"]
+BRANCH_CARDS = "".join(branch_card(d) for d in DOJOS)
+DEPARTMENTS = ",\n        ".join(department_ld(d) for d in DOJOS)
 
 
 WA = f"https://wa.me/{WHATSAPP}"
@@ -69,15 +74,14 @@ def build():
         { "@type": "Place", "name": "Bellandur" },
         { "@type": "Place", "name": "Whitefield" },
         { "@type": "Place", "name": "Marathahalli" },
-        { "@type": "Place", "name": "Koramangala" }
+        { "@type": "Place", "name": "Kadubeesanahalli" },
+        { "@type": "Place", "name": "Koramangala" },
+        { "@type": "Place", "name": "HSR Layout" },
+        { "@type": "Place", "name": "Yelahanka" }
       ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Active Arena, Munnireddy Layout, Panathur",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
+      "address": """ + postal_ld(AA) + """,
+      "geo": """ + geo_ld(AA) + """,
+      "hasMap": "https://www.google.com/maps?cid=16080105599999335819",
       "sameAs": [
         "https://www.facebook.com/Nipponfit",
         "https://www.instagram.com/nippon_fit",
@@ -91,27 +95,7 @@ def build():
       ],
       "founder": { "@id": "https://www.nipponfit.com/nippon-karate-club#pooja" },
       "department": [
-        {
-          "@type": "SportsActivityLocation",
-          "name": "Nippon Karate Club \\u2014 Active Arena, Panathur",
-          "telephone": "+91-9945616005",
-          "address": { "@type": "PostalAddress", "streetAddress": "Active Arena, Munnireddy Layout, Panathur", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
-          "hasMap": "https://www.google.com/maps/search/?api=1&query=Active+Arena+Munnireddy+Layout+Panathur+Bengaluru"
-        },
-        {
-          "@type": "SportsActivityLocation",
-          "name": "Nippon Karate Club \\u2014 Dravid Centre for Sports Excellence",
-          "telephone": "+91-9945616005",
-          "address": { "@type": "PostalAddress", "streetAddress": "Dravid Centre for Sports Excellence", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
-          "hasMap": "https://www.google.com/maps/search/?api=1&query=Dravid+Centre+for+Sports+Excellence+Bengaluru"
-        },
-        {
-          "@type": "SportsActivityLocation",
-          "name": "Nippon Karate Club \\u2014 Koramangala Club",
-          "telephone": "+91-9945616005",
-          "address": { "@type": "PostalAddress", "streetAddress": "Koramangala Club, Koramangala", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
-          "hasMap": "https://www.google.com/maps/search/?api=1&query=Koramangala+Club+Bengaluru"
-        }
+        """ + DEPARTMENTS + """
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -144,7 +128,7 @@ def build():
         {
           "@type": "Question",
           "name": "Where are your classes in Bangalore?",
-          "acceptedAnswer": { "@type": "Answer", "text": "We train at Active Arena in Munnireddy Layout, Panathur; at the Dravid Centre for Sports Excellence; and at Koramangala Club. Panathur is convenient for Bellandur, Whitefield, Marathahalli and Sarjapur Road." }
+          "acceptedAnswer": { "@type": "Answer", "text": "We train at three dojos: Active Arena on the Outer Ring Road, Kadubeesanahalli (for Marathahalli, Bellandur, Whitefield and Sarjapur Road); The Koramangala Club in 6th Block, Koramangala (for HSR Layout and Indiranagar); and the Dravid Centre for Sports Excellence in Yelahanka (for north Bengaluru)." }
         },
         {
           "@type": "Question",
@@ -408,50 +392,11 @@ def build():
         <span class="eyebrow">Branches</span>
         <hr class="rule">
         <h2>Find your nearest dojo</h2>
-        <p>Three training venues across east and south Bengaluru.</p>
+        <p>Three dojos across Bengaluru: Kadubeesanahalli, Koramangala and Yelahanka.</p>
       </div>
 
       <div class="grid grid-3 grid-gap">
-
-        <article class="branch">
-          <iframe class="branch-map"
-                  src="https://maps.google.com/maps?q=Active%20Arena%20Munnireddy%20Layout%20Panathur%20Bengaluru&amp;output=embed"
-                  title="Map of Active Arena, Panathur" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="branch-body">
-            <h3>Active Arena, Panathur</h3>
-            <address>Munnireddy Layout, Panathur, Bengaluru, Karnataka</address>
-            <p>Closest for Bellandur, Whitefield, Marathahalli and Sarjapur Road.</p>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Active+Arena+Munnireddy+Layout+Panathur+Bengaluru" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </article>
-
-        <article class="branch">
-          <iframe class="branch-map"
-                  src="https://maps.google.com/maps?q=Dravid%20Centre%20for%20Sports%20Excellence%20Bengaluru&amp;output=embed"
-                  title="Map of the Dravid Centre for Sports Excellence" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="branch-body">
-            <h3>Dravid Centre for Sports Excellence</h3>
-            <address>Bengaluru, Karnataka</address>
-            <p>A national-standard sports facility, shared with India's leading athletes.</p>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Dravid+Centre+for+Sports+Excellence+Bengaluru" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </article>
-
-        <article class="branch">
-          <iframe class="branch-map"
-                  src="https://maps.google.com/maps?q=Koramangala%20Club%20Bengaluru&amp;output=embed"
-                  title="Map of Koramangala Club" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="branch-body">
-            <h3>Koramangala Club</h3>
-            <address>Koramangala, Bengaluru, Karnataka</address>
-            <p>For Koramangala, HSR Layout, Indiranagar and central Bengaluru.</p>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Koramangala+Club+Bengaluru" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </article>
-
+{BRANCH_CARDS}
       </div>
     </div>
   </section>
@@ -489,9 +434,13 @@ def build():
 
         <h3>Where are your classes in Bangalore?</h3>
         <p>
-          We train at Active Arena in Munnireddy Layout, Panathur; at the Dravid Centre
-          for Sports Excellence; and at Koramangala Club. Panathur is convenient for
-          Bellandur, Whitefield, Marathahalli and Sarjapur Road.
+          We train at three dojos:
+          <a href="/dojo-panathur">Active Arena</a> on the Outer Ring Road, Kadubeesanahalli
+          (for Marathahalli, Bellandur, Whitefield and Sarjapur Road);
+          <a href="/dojo-koramangala">The Koramangala Club</a> in 6th Block, Koramangala
+          (for HSR Layout and Indiranagar); and the
+          <a href="/dojo-dravid-cse">Dravid Centre for Sports Excellence</a> in Yelahanka
+          (for north Bengaluru).
         </p>
 
         <h3>What age can my child start karate?</h3>
@@ -939,9 +888,9 @@ def _club():
             <div class="form-field">
               <label for="dojo">Preferred Dojo</label>
               <select id="dojo" name="dojo">
-                <option>Active Arena, Panathur</option>
-                <option>Dravid Centre for Sports Excellence</option>
-                <option>Koramangala Club</option>
+                <option>Active Arena, Kadubeesanahalli</option>
+                <option>Dravid Centre for Sports Excellence, Yelahanka</option>
+                <option>The Koramangala Club</option>
                 <option>Not sure &mdash; please advise</option>
               </select>
             </div>
@@ -1189,70 +1138,21 @@ def _locations():
     page(
         slug="locations",
         title="Karate Classes Near You in Bangalore — Our Dojos | Nippon Fit",
-        description="Karate dojos in Bengaluru: Active Arena Panathur (for Bellandur, Whitefield, Marathahalli), Dravid Centre for Sports Excellence, and Koramangala Club.",
+        description="Nippon Fit karate dojos in Bengaluru: Active Arena, Kadubeesanahalli (Marathahalli, Bellandur), The Koramangala Club, and the Dravid Centre for Sports Excellence, Yelahanka.",
         extra_head=breadcrumb_ld("Locations", "locations"),
         body=f"""
   <section class="page-banner">
     <div class="wrap">
       {crumbs("Locations")}
       <h1>Karate Classes Near You in Bangalore</h1>
-      <p>Three dojos across east and south Bengaluru. Same syllabus, same grading standard, at all of them.</p>
+      <p>Three dojos across Bengaluru, in Kadubeesanahalli, Koramangala and Yelahanka. Same syllabus, same grading standard, at all of them.</p>
     </div>
   </section>
 
   <section class="section section-paper">
     <div class="wrap">
       <div class="grid grid-3 grid-gap">
-
-        <article class="branch">
-          <iframe class="branch-map"
-                  src="https://maps.google.com/maps?q=Active%20Arena%20Munnireddy%20Layout%20Panathur%20Bengaluru&amp;output=embed"
-                  title="Map of Active Arena, Panathur" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="branch-body">
-            <h3>Active Arena, Panathur</h3>
-            <address>Munnireddy Layout, Panathur,<br>Bengaluru, Karnataka</address>
-            <p>
-              Our main dojo, and the easiest to reach from <strong>Bellandur, Whitefield,
-              Marathahalli, Sarjapur Road, Kadubeesanahalli and Varthur</strong>. Indoor
-              matted floor, parking, and space for parents to sit and watch.
-            </p>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Active+Arena+Munnireddy+Layout+Panathur+Bengaluru" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </article>
-
-        <article class="branch">
-          <iframe class="branch-map"
-                  src="https://maps.google.com/maps?q=Dravid%20Centre%20for%20Sports%20Excellence%20Bengaluru&amp;output=embed"
-                  title="Map of the Dravid Centre for Sports Excellence" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="branch-body">
-            <h3>Dravid Centre for Sports Excellence</h3>
-            <address>Bengaluru, Karnataka</address>
-            <p>
-              A national-standard facility shared with some of India's leading athletes.
-              This is where our competition squad does much of its preparation.
-            </p>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Dravid+Centre+for+Sports+Excellence+Bengaluru" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </article>
-
-        <article class="branch">
-          <iframe class="branch-map"
-                  src="https://maps.google.com/maps?q=Koramangala%20Club%20Bengaluru&amp;output=embed"
-                  title="Map of Koramangala Club" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="branch-body">
-            <h3>Koramangala Club</h3>
-            <address>Koramangala,<br>Bengaluru, Karnataka</address>
-            <p>
-              For families in <strong>Koramangala, HSR Layout, Indiranagar and central
-              Bengaluru</strong>.
-            </p>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Koramangala+Club+Bengaluru" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </article>
-
+{BRANCH_CARDS}
       </div>
     </div>
   </section>
@@ -1266,9 +1166,11 @@ def _locations():
         <p>If your area is on this list, one of our three dojos is a reasonable drive away.</p>
       </div>
       <p class="text-centre" style="max-width:46em;margin:0 auto;color:var(--ink-soft)">
-        Panathur &middot; Bellandur &middot; Whitefield &middot; Marathahalli &middot;
-        Sarjapur Road &middot; Kadubeesanahalli &middot; Varthur &middot; Koramangala &middot;
-        HSR Layout &middot; Indiranagar &middot; Domlur &middot; Brookefield
+        Panathur &middot; Kadubeesanahalli &middot; Marathahalli &middot; Bellandur &middot;
+        Whitefield &middot; Sarjapur Road &middot; Varthur &middot; Brookefield &middot;
+        Koramangala &middot; HSR Layout &middot; Indiranagar &middot; Ejipura &middot;
+        Domlur &middot; BTM Layout &middot; Yelahanka &middot; Jakkur &middot; Hebbal &middot;
+        Sahakar Nagar &middot; Thanisandra &middot; Devanahalli
       </p>
     </div>
   </section>
@@ -1382,11 +1284,12 @@ def _contact():
           <div class="card" style="margin-bottom:20px">
             <h3>Main dojo</h3>
             <address style="font-style:normal;color:var(--ink-soft);font-size:.97rem">
-              Active Arena, Munnireddy Layout,<br>
-              Panathur, Bengaluru,<br>
-              Karnataka, India
+              Active Arena, Outer Ring Road,<br>
+              opposite Prestige Tech Park, behind Croma,<br>
+              Kadubeesanahalli, Marathahalli,<br>
+              Bengaluru, Karnataka 560087
             </address>
-            <p style="margin-bottom:0;margin-top:16px"><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Active+Arena+Munnireddy+Layout+Panathur+Bengaluru" target="_blank" rel="noopener">Directions</a></p>
+            <p style="margin-bottom:0;margin-top:16px"><a class="btn btn-outline" href="{directions_url(AA)}" target="_blank" rel="noopener">Directions</a></p>
           </div>
 
           <div class="card">
@@ -1481,7 +1384,7 @@ def _not_found():
         </article>
         <article class="card">
           <h3>Looking for a dojo?</h3>
-          <p>Panathur, the Dravid Centre for Sports Excellence, and Koramangala.</p>
+          <p>Active Arena (Kadubeesanahalli), The Koramangala Club, and the Dravid Centre for Sports Excellence, Yelahanka.</p>
           <p style="margin-top:18px;margin-bottom:0"><a class="link-more" href="/locations">See the locations</a></p>
         </article>
         <article class="card">

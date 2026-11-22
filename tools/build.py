@@ -118,14 +118,18 @@ FOOTER = f"""<footer class="site-footer">
           <li><a href="/gallery">Gallery</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/locations">Locations</a></li>
+          <li><a href="/dojo-panathur">Dojo: Active Arena</a></li>
+          <li><a href="/dojo-koramangala">Dojo: Koramangala</a></li>
+          <li><a href="/dojo-dravid-cse">Dojo: Yelahanka</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Contact</h4>
         <address>
-          Active Arena, Munnireddy Layout,<br>
-          Panathur, Bengaluru, Karnataka<br><br>
+          Active Arena, Outer Ring Road,<br>
+          opp. Prestige Tech Park, behind Croma,<br>
+          Kadubeesanahalli, Bengaluru 560087<br><br>
           <a href="tel:{PHONE_LINK}">{PHONE_DISPLAY}</a><br>
           <a href="mailto:{EMAIL}">{EMAIL}</a>
         </address>
@@ -249,8 +253,10 @@ if __name__ == "__main__":
 
     import pages_main
     import pages_blog
+    import pages_dojos
 
     pages_main.build()
     pages_blog.build()
+    pages_dojos.build()
 
     print("\nDone. Preview it with:  python tools/serve.py")
