@@ -85,6 +85,7 @@ def build():
       "sameAs": [
         "https://www.facebook.com/Nipponfit",
         "https://www.instagram.com/nippon_fit",
+        "https://www.youtube.com/@NipponFit",
         "https://www.linkedin.com/company/nipponfit"
       ],
       "memberOf": [
