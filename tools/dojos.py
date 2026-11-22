@@ -66,21 +66,23 @@ DOJOS = [
         "slug": "dojo-dravid-cse",
         "name": "Dravid Centre for Sports Excellence",
         "label": "Dravid Centre for Sports Excellence, Yelahanka",
-        "venue": "Centre for Sports Excellence",
-        "street": "Survey No. 336, Jala Hobli, Tharahunise",
-        "area": "Yelahanka",
+        "venue": "Padukone-Dravid Centre for Sports Excellence",
+        "street": "",
+        "area": "Bettahalsoor",
         "postcode": "562157",
-        "lat": 13.1679409,
-        "lng": 77.5976224,
-        # The venue's own Google listing
-        "maps_name": "Centre for Sports Excellence",
-        "place_id": "ChIJt7XKHyMfrjsRCxBxDasE81Q",
-        "cid": "6121241451238068235",
-        "embed_query": "Centre for Sports Excellence, Jala Hobli, Tharahunise, Yelahanka, Bengaluru 562157",
+        "lat": 13.1683121,
+        "lng": 77.5945365,
+        # Our own verified Google Business Profile, "Nippon Karate Club",
+        # pinned on our dedicated floor inside the campus (checked 22 Nov 2026).
+        # Directions go to these coordinates, as no place ID was available.
+        "maps_name": "Nippon Karate Club",
+        "place_id": None,
+        "cid": "17382461994412505121",
+        "embed_query": "Nippon Karate Club, Padukone-Dravid Centre for Sports Excellence, Bettahalsoor, Bengaluru 562157",
         "near": ["Yelahanka", "Jakkur", "Hebbal", "Sahakar Nagar",
                  "Thanisandra", "Devanahalli"],
-        "card": "A national-standard sports facility in Yelahanka, shared with some "
-                "of India's leading athletes. For north Bengaluru.",
+        "card": "Our own dedicated floor inside the Padukone-Dravid Centre for Sports "
+                "Excellence, a national-standard campus in Yelahanka. For north Bengaluru.",
     },
 ]
 
@@ -89,7 +91,8 @@ DOJO = {d["key"]: d for d in DOJOS}
 
 def address_lines(d):
     """The address as it appears on Google, split for display."""
-    return [d["venue"], d["street"], f'{d["area"]}, Bengaluru, Karnataka {d["postcode"]}']
+    lines = [d["venue"], d["street"], f'{d["area"]}, Bengaluru, Karnataka {d["postcode"]}']
+    return [x for x in lines if x]
 
 
 def address_html(d, sep="<br>"):
@@ -107,6 +110,8 @@ def embed_url(d):
 
 def directions_url(d):
     """Google Maps directions straight to the exact listing (place ID)."""
+    if not d["place_id"]:
+        return f'https://www.google.com/maps/dir/?api=1&amp;destination={d["lat"]},{d["lng"]}'
     return ("https://www.google.com/maps/dir/?api=1&amp;destination=" + quote_plus(d["maps_name"])
             + "&amp;destination_place_id=" + d["place_id"])
 
@@ -123,7 +128,7 @@ def page_url(d):
 def postal_ld(d):
     return (
         '{ "@type": "PostalAddress", '
-        f'"streetAddress": "{d["venue"]}, {d["street"]}, {d["area"]}", '
+        f'"streetAddress": "{", ".join(x for x in (d["venue"], d["street"], d["area"]) if x)}", '
         '"addressLocality": "Bengaluru", "addressRegion": "Karnataka", '
         f'"postalCode": "{d["postcode"]}", "addressCountry": "IN" }}'
     )

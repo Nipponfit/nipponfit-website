@@ -114,8 +114,8 @@ CONTENT = {
         "intro": "A national-standard sports facility in Yelahanka, shared with some of "
                  "India's leading athletes, and our dojo for north Bengaluru.",
         "about": [
-            "Nippon Karate Club trains at the Dravid Centre for Sports Excellence in "
-            "Yelahanka. It is the closest of our dojos for families in Yelahanka, Jakkur, "
+            "Nippon Karate Club has its own dedicated floor, fully set up as a dojo, "
+            "inside the Padukone-Dravid Centre for Sports Excellence in Yelahanka. It is the closest of our dojos for families in Yelahanka, Jakkur, "
             "Hebbal, Sahakar Nagar, Thanisandra and Devanahalli.",
             "This is where much of our competition preparation happens, and where we "
             "hosted Tokyo Olympic bronze medallist Ugur Aktas for an elite kumite "
@@ -128,14 +128,14 @@ CONTENT = {
             ("Renshi Pooja Shri Shetty", "Founder and Chief Instructor. International karateka, Tokyo Olympics 2020 standing of 181."),
             ("Jeevan J", "2nd Dan black belt, licensed referee and judge, Karnataka State and National Open medallist."),
         ],
-        "getting_here": "Centre for Sports Excellence, Survey No. 336, Jala Hobli, "
-                        "Tharahunise, Yelahanka, Bengaluru 562157. Tap Directions for the exact route.",
+        "getting_here": "Our dojo is on its own floor inside the Padukone-Dravid Centre for "
+                        "Sports Excellence campus. Tap Directions: it goes straight to our building.",
         "faq": [
             ("Is Yelahanka only for competition students?",
              "No. Beginners from age four train here too. Competition students simply "
              "get the benefit of a national-standard facility."),
             ("Where exactly is it?",
-             "Centre for Sports Excellence, Survey No. 336, Jala Hobli, Tharahunise, "
+             "Nippon Karate Club, Padukone-Dravid Centre for Sports Excellence, Bettahalsoor, "
              "Yelahanka, Bengaluru 562157. Tap Directions above to open it in Google Maps."),
             ("Who teaches at Yelahanka?",
              "Renshi Pooja Shri Shetty, our founder and chief instructor, with Jeevan J."),
